@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include 'user_navbar.html' %}
+ <div class="page-content" >
+<div class="page-header" >
+          <div class="container-fluid">
+
+          </div>
+        </div>
+        <!-- Breadcrumb-->
+
+        <section class="no-padding-top">
+          <div class="container-fluid">
+            <div class="row">
+              <!-- Basic Form-->
+              <div class="col-lg-6">
+                <div class="block">
+                  <div class="title"><strong class="d-block">Feedback</strong><span class="d-block"></span></div>
+                  <div class="block-body">
+                    <form action="/save_feedback/{{data.id}}" method="POST" enctype="multipart/form-data">{% csrf_token %}
+
+                           <div class="form-group">
+                        <label class="form-control-label">Supplier</label>
+                        <input type="text" placeholder="Category" class="form-control" name="supplier" value="{{data.supplier.name}}">
+                      </div>
+                                    <div class="form-group">
+                        <label class="form-control-label">Material</label>
+                        <input type="text"  class="form-control" name="category" value="{{data.material.material}}">
+                      </div>
+                                    <div class="form-group">
+                        <label class="form-control-label">Feedback</label>
+<textarea rows="10" cols="10" class="form-control" name="feedback"></textarea>
+                                    </div>
+
+                      <div class="form-group">
+                        <input type="submit" value="Send Feedback" class="btn btn-primary">
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+ </div>
+</body>
+</html>

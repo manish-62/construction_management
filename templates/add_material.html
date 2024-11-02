@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include 'supplier_sidebar.html' %}
+ <div class="page-content" >
+<div class="page-header" >
+          <div class="container-fluid">
+
+          </div>
+        </div>
+        <!-- Breadcrumb-->
+
+        <section class="no-padding-top">
+          <div class="container-fluid">
+            <div class="row">
+              <!-- Basic Form-->
+              <div class="col-lg-6">
+                <div class="block">
+                  <div class="title"><strong class="d-block">Material Category</strong><span class="d-block"></span></div>
+                  <div class="block-body">
+                    <form action="/material_save/" method="POST" enctype="multipart/form-data">{% csrf_token %}
+
+                           <div class="form-group">
+                        <label class="form-control-label">Category</label>
+                               <select name="category">
+                                   {% for i in f %}
+                                   <option value="{{i.id}}">{{i.category}}</option>
+                                   {% endfor %}
+                               </select>
+                           </div>
+                         <div class="form-group">
+                        <label class="form-control-label">Material</label>
+                              <input type="text" name="material" class="form-control">
+                           </div>
+        <div class="form-group">
+                        <label class="form-control-label">Material Durability</label>
+                              <input type="text" name="durability" class="form-control">
+                           </div>
+                                <div class="form-group">
+                        <label class="form-control-label">Material Density</label>
+                              <input type="text" name="density" class="form-control">
+                           </div>
+                                <div class="form-group">
+                        <label class="form-control-label">Material Water absorption</label>
+                              <input type="text" name="water_absorption" class="form-control">
+                           </div>
+                                <div class="form-group">
+                        <label class="form-control-label">Strength</label>
+                              <input type="text" name="strength" class="form-control">
+                           </div>        <div class="form-group">
+                        <label class="form-control-label">Hardness</label>
+                              <input type="text" name="hardness" class="form-control">
+                           </div>        <div class="form-group">
+                        <label class="form-control-label">Elasticity</label>
+                              <input type="text" name="elasticity" class="form-control">
+                           </div>        <div class="form-group">
+                        <label class="form-control-label">Thermal Capacity</label>
+                              <input type="text" name="thermal_capacity" class="form-control">
+                           </div>
+                        <div class="form-group">
+                        <label class="form-control-label">Price</label>
+                              <input type="text" name="price" class="form-control">
+                           </div>
+
+                      <div class="form-group">
+                        <input type="submit" value="Register Material" class="btn btn-primary">
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+ </div>
+</body>
+</html>

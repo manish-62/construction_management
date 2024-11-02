@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include 'admin_sidebar.html' %}
+ <div class="page-content">
+<div class="page-header">
+          <div class="container-fluid">
+          </div>
+        </div>
+        <!-- Breadcrumb-->
+
+        <section class="no-padding-top">
+          <div class="container-fluid">
+            <div class="row">
+              <!-- Basic Form-->
+              <div class="">
+                <div class="block">
+                  <div class="title"><strong class="d-block">Basic Form</strong></div>
+                  <div class="block-body">
+                    <form action="/save_approve_request/{{f.id}}" method="POST" enctype="multipart/form-data">{% csrf_token %}
+                      <div class="form-group">
+                        <label class="form-control-label">Name</label>
+                        <input type="text" placeholder="Your Name" class="form-control" name="name" value="{{f.name}}">
+                      </div>
+                      <div class="form-group">
+                        <label class="form-control-label">Password</label>
+                        <input type="text" placeholder="Password" class="form-control" name="password">
+                      </div>
+
+                      <div class="form-group">
+                        <input type="submit" value="Approve" class="btn btn-primary">
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+ </div>
+
+
+</body>
+</html>

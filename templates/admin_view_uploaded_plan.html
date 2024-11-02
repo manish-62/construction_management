@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include 'admin_sidebar.html' %}
+
+ {% for message in messages %}
+<div class="container-fluid p-0">
+  <div class="alert {{ message.tags }} alert-dismissible" role="alert" >
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="True">&times;</span>
+    </button>
+    {{ message }}
+  </div>
+</div>
+{% endfor %}
+        <section class="no-padding-top">
+          <div class="container-fluid">
+            <div class="row">
+              <div >
+                <div class="block" style="border:1px solid black;">
+                  <div class="title"><strong>Plan List</strong></div>
+                  <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                      <thead>
+                        <tr>
+                          <th>Sl.No</th>
+                          <th>Name</th>
+                          <th>Mobile</th>
+                          <th>Email</th>
+                          <th>Plan</th>
+
+                      <th>Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      {% for i in bb %}
+                        <tr>
+                          <th scope="row">{{forloop.counter}}</th>
+                          <td>{{i.user.name}}</td>
+                          <td>{{i.user.mobile}}</td>
+                          <td>{{i.user.email}}</td>
+
+                            <td>{{i.plan}}</td>
+                          <td><a href="/uploaded_cost_estimation/{{i.id}}">Send plan Cost details</a></td>
+
+                        </tr>
+                      {% endfor %}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+</div>
+
+</body>
+</html>

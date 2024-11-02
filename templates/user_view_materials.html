@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include 'user_navbar.html' %}
+<div class="page-content">
+        <!-- Page Header-->
+        <div class="page-header no-margin-bottom">
+          <div class="container-fluid">
+
+          </div>
+        </div>
+        <!-- Breadcrumb-->
+        <div class="container-fluid">
+          <ul class="breadcrumb">
+          </ul>
+        </div>
+        <section class="no-padding-top">
+          <div class="container-fluid">
+            <div class="row">
+              <div >
+                <div class="block" style="border:1px solid white;">
+                  <div class="title"><strong>Material List</strong></div>
+                  <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                      <thead>
+                        <tr>
+                          <th>Sl.No</th>
+                          <th>Category</th>
+                            <th>Supplier</th>
+                          <th>Material</th>
+                          <th>Durability</th>
+                          <th>Density</th>
+                            <th>Water Absorption</th>
+                            <th>Strength</th>
+                            <th>Hardness</th>
+                            <th>Elasticity</th>
+                            <th>Thermal Capacity</th>
+                            <th>Price</th>
+
+
+
+
+
+
+                        </tr>
+                      </thead>
+                      <tbody>
+                      {% for i in data %}
+                        <tr>
+                          <th scope="row">{{forloop.counter}}</th>
+                              <td>{{i.category.category}}</td>
+
+                            <td>{{i.supplier.name}}</td>
+                              <td>{{i.material}}</td>
+
+                              <td>{{i.material_Durability}}</td>
+
+                              <td>{{i.material_density}}</td>
+                              <td>{{i.material_Water_absorption}}</td>
+                              <td>{{i.strength}}</td>
+                              <td>{{i.Hardness}}</td>
+                              <td>{{i.Elasticity}}</td>
+                              <td>{{i.Thermal_capacity}}</td>
+                            <td>{{i.price}}</td>
+                            <td><a href="/Send_Order/{{i.id}}" class="rounded bg-danger text-white">Send Order</a></td>
+
+
+                        </tr>
+                      {% endfor %}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+</div>
+</div>
+</body>
+</html>

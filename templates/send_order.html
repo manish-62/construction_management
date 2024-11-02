@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include 'user_navbar.html' %}
+
+<center><div class="col-sm-12 mb-5"  style="padding-top:100px;"><strong>Personal Details </strong></div></center>
+<div class="col-lg-12">
+
+                <div class="block">
+
+                  <div class="block-body">
+                    <form class="form-horizontal" action="/save_order_request/{{data.id}}" method="POST" >{% csrf_token %}
+
+                      </div>
+                         <div class="line"></div>
+                          <div class="form-group row">
+                        <label class="col-sm-3 form-control-label">Material</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control" name="material" value="{{data.material}}">
+                        </div>
+                      </div>
+                        <div class="form-group row">
+                        <label class="col-sm-3 form-control-label">Full Name</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control" name="name">
+                        </div>
+                      </div>
+                         <div class="line"></div>
+                        <div class="form-group row">
+                        <label class="col-sm-3 form-control-label">Mobile number</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control" name="mobile">
+                        </div>
+                      </div>
+                      <div class="line"></div>
+                        <div class="form-group row">
+                        <label class="col-sm-3 form-control-label">Email</label>
+                        <div class="col-sm-9">
+                          <input type="email" class="form-control" name="email">
+                        </div>
+                      </div>
+                    <h4><u>Billing Details </u></h4><br>
+                      <div class="line"></div>
+                              <div class="form-group row">
+                        <label class="col-sm-3 form-control-label">Pincode</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control" name="pincode">
+                        </div>
+                      </div>
+                      <div class="line"></div>
+                              <div class="form-group row">
+                        <label class="col-sm-3 form-control-label">flat,House no,building,Company,Apartment</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control" name="flat">
+                        </div>
+                      </div>
+                      <div class="line"></div>
+                              <div class="form-group row">
+                        <label class="col-sm-3 form-control-label">Area,Street,Sector,Village</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control" name="area">
+                        </div>
+                      </div>
+                      <div class="line"></div>
+                      <div class="form-group row">
+                        <label class="col-sm-3 form-control-label">Land Mark</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control" name="landmark"><small class="help-block-none">Specify any nearest building</small>
+                        </div>
+                      </div>
+                      <div class="line"></div>
+                        <div class="form-group row">
+                        <label class="col-sm-3 form-control-label">Town/City</label>
+                        <div class="col-sm-9">
+                          <div class="row">
+                            <div class="col-md-5">
+                              <input type="text" placeholder="town" class="form-control" name="city">
+                            </div>
+
+                                <label class="form-control-label">State</label>
+                            <div class="col-md-5">
+                          <select name="state" class="form-control mb-3 mb-3">
+                            <option>Kerala</option>
+                            <option>Tamil Nadu</option>
+                          </select>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="line"></div>
+                      <div class="line"></div>
+                      <div class="form-group row">
+                          <div class="col-sm-3"></div>
+                        <div class="col-sm-9">
+                          <div>
+                            <input id="option" type="checkbox" value="default" name="default_address">
+                            <label for="option">Make this my default Address</label>
+                          </div>
+                          <div>
+                          </div>
+                          <div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="line"></div>
+
+                      <div class="line"></div>
+                      <div class="form-group row">
+                        <label class="col-sm-3 form-control-label">Address Type</label>
+                        <div class="col-sm-9">
+                          <select name="address_type" class="form-control mb-3 mb-3">
+                            <option>Home</option>
+                            <option>Office</option>
+
+                          </select>
+                        </div>
+
+                      </div>
+                      <div class="line"></div>
+                         <div class="line"></div>
+                        <div class="form-group row">
+                        <label class="col-sm-3 form-control-label">Price</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control" value="{{data.price}}" name="price">
+                        </div>
+                      </div>
+                     <div class="line"></div>
+                        <div class="form-group row">
+                        <label class="col-sm-3 form-control-label">Quantity(Packets or count)</label>
+                        <div class="col-sm-9">
+                          <input type="number" class="form-control"  name="quantity" id="quantity">
+                        </div>
+                      </div>
+
+                              <div class="line"></div>
+<!--                        <div class="form-group row">-->
+<!--                        <label class="col-sm-3 form-control-label">Payment method</label>-->
+<!--                            <div class="col-sm-9">-->
+<!--                              <div class="i-checks">-->
+<!--                            <input id="radioCustom4" type="radio" name="payment_method" class="radio-template" value="Net Banking">-->
+<!--                            <label for="radioCustom4">Net Banking</label>-->
+<!--                          </div>-->
+<!--                             <div class="i-checks">-->
+<!--                            <input id="radioCustom4" type="radio" name="payment_method" class="radio-template" value="Cash on Delivery">-->
+<!--                            <label for="radioCustom4">Cash on delivery</label>-->
+<!--                          </div>-->
+<!--                        </div>-->
+<!--                        </div>-->
+                    <div class="form-group row">
+                        <label class="col-sm-3 form-control-label">Instructions</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control" name="instructions"><small class="help-block-none"></small>
+                        </div>
+                      </div>
+                        <div class="form-group row">
+
+                        <div class="col-sm-12">
+                          <div class="form-group">
+
+                              <div>
+                                <button type="submit" class="btn btn-primary" style="width:100%;">Send Order Request</button>
+                              </div>
+
+                            </div>
+                          </div>
+                    </form>
+                  </div>
+                </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+</body>
+</html>

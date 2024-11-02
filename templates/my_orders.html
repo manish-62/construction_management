@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include 'user_navbar.html' %}
+<div class="page-content">
+        <!-- Page Header-->
+        <div class="page-header no-margin-bottom">
+          <div class="container-fluid">
+
+          </div>
+        </div>
+        <!-- Breadcrumb-->
+        <div class="container-fluid">
+          <ul class="breadcrumb">
+            <li class="breadcrumb-item active">Tables            </li>
+          </ul>
+        </div>
+ {% for message in messages %}
+<div class="container-fluid p-0">
+  <div class="alert {{ message.tags }} alert-dismissible" role="alert" >
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="True">&times;</span>
+    </button>
+    {{ message }}
+  </div>
+</div>
+{% endfor %}
+        <section class="no-padding-top">
+          <div class="container-fluid">
+            <div class="row">
+              <div >
+                <div class="block" style="border:1px solid white;">
+                  <div class="title"><strong>Suppliers List</strong></div>
+                  <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                      <thead>
+                        <tr>
+                          <th>Sl.No</th>
+                          <th>Booked Date</th>
+                          <th>Supplier</th>
+                          <th>Material</th>
+                            <th>Quantity</th>
+                          <th>Price</th>
+                          <th>Total Price</th>
+                          <th>Date for delivery</th>
+                          <th>Status</th>
+
+                        </tr>
+                      </thead>
+                      <tbody>
+                      {% for i in data %}
+                        <tr>
+                          <th scope="row">{{forloop.counter}}</th>
+                          <td>{{i.dt}}</td>
+                          <td>{{i.supplier.name}}</td>
+                          <td>{{i.material.material}}</td>
+                          <td>{{i.quantity}}</td>
+                          <td>{{i.price}}</td>
+                          <td>{{i.total_price}}</td>
+                          <td>{{i.delivery_date}}</td>
+                            <td>{{i.status}}</td>
+
+{% if i.payment_mode is not None %}
+
+                          <td><a href="" class="rounded bg-success text-white">{{i.payment_mode}}</a></td>
+                            {% else %}
+                            <td><a href="/pay_online/{{i.id}}" class="rounded bg-info text-white">Pay Now</a></td>
+                            <td><a href="/pay_directly{{i.id}}" class="rounded bg-info text-white">Pay Directly</a></td>
+
+    {% endif %}
+                        </tr>
+                      {% endfor %}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+</div>
+
+</body>
+</html>

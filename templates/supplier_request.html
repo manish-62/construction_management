@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+   <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css'%}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/fontawesome-free/css/all.min.css'%}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css'%}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css'%}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css'%}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
+<style>
+  label{
+  color:white;
+  }
+</style>
+</head>
+<body>
+{% include 'index_sidebar.html' %}
+<section id="hero" class="hero">
+<div class="info d-flex align-items-center">
+      <div class="container">
+        <div class="page-content">
+<div class="page-header">
+          <div class="container-fluid">
+          </div>
+        </div>
+        <!-- Breadcrumb-->
+
+        <section class="no-padding-top">
+          <div class="container-fluid">
+            <div class="row">
+              <!-- Basic Form-->
+              <div class="">
+                <div class="block">
+                  <div class="title" ><strong class="d-block"><center><h3>Request Form</h3></ceter></strong></div>
+                  <div class="block-body">
+                    <form action="/save_supplier_request/" method="POST" enctype="multipart/form-data">{% csrf_token %}
+                      <div class="form-group">
+                        <label class="form-control-label">Name</label>
+                        <input type="text" placeholder="Your Name" class="form-control" name="name">
+                      </div>
+                      <div class="form-group">
+                        <label class="form-control-label">Mobile</label>
+                        <input type="text" placeholder="Mobile" class="form-control" name="mobile">
+                      </div>
+                        <div class="form-group">
+                        <label class="form-control-label">Email</label>
+                        <input type="email" placeholder="Email Address" class="form-control" name="email">
+                      </div>
+                        <div class="form-group">
+                        <label class="form-control-label">ADDRESS</label>
+                        <input type="text" placeholder="Address" class="form-control" name="address">
+                      </div>
+                        <div class="form-group">
+                        <label class="form-control-label">Licence Number</label>
+                        <input type="text" placeholder="Licence Number" class="form-control" name="licence_number">
+                      </div>
+                          <div class="form-group">
+                      <div class="form-group">
+                        <label class="form-control-label">Proof(supplier licence)</label>
+                        <input type="file" placeholder="Proof" class="form-control" name="proof">
+                      </div>
+                      <div class="form-group">
+                        <input type="submit" value="Request Send" class="btn btn-primary">
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+ </div>
+
+
+      </div>
+    </div>
+
+    <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+
+      <div class="carousel-item active" style="background-image: url({% static 'assets/img/hero-carousel/hero-carousel-1.jpg' %})"></div>
+      <div class="carousel-item" style="background-image: url({% static 'assets/img/hero-carousel/hero-carousel-2.jpg' %})"></div>
+      <div class="carousel-item" style="background-image: url({% static 'assets/img/hero-carousel/hero-carousel-3.jpg' %})"></div>
+      <div class="carousel-item" style="background-image: url({% static 'assets/img/hero-carousel/hero-carousel-4.jpg' %})"></div>
+      <div class="carousel-item" style="background-image: url({% static 'assets/img/hero-carousel/hero-carousel-5.jpg' %})"></div>
+
+      <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+      </a>
+
+      <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+      </a>
+
+    </div>
+
+</section>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include 'supplier_sidebar.html' %}
+<div class="page-content">
+        <!-- Page Header-->
+        <div class="page-header no-margin-bottom">
+          <div class="container-fluid">
+
+          </div>
+        </div>
+        <!-- Breadcrumb-->
+        <div class="container-fluid">
+          <ul class="breadcrumb">
+          </ul>
+        </div>
+        <section class="no-padding-top">
+          <div class="container-fluid">
+            <div class="row">
+              <div >
+                <div class="block" style="border:1px solid white;">
+                  <div class="title"><strong>Category List</strong></div>
+                  <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                      <thead>
+                        <tr>
+                          <th>Sl.No</th>
+                          <th>Category</th>
+
+                        </tr>
+                      </thead>
+                      <tbody>
+                      {% for i in c %}
+                        <tr>
+                          <th scope="row">{{forloop.counter}}</th>
+                              <td>{{i.category}}</td>
+
+                            <td><a href="/delete_category/{{i.id}}" class="rounded bg-danger text-white">Delete Category</a></td>
+
+                        </tr>
+                      {% endfor %}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+</div>
+</body>
+</html>

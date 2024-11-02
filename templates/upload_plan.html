@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include 'user_navbar.html' %}
+
+        <!-- Breadcrumb-->
+
+
+          <div class="container-fluid" style="padding-top:150px;">
+            <div class="row">
+              <!-- Basic Form-->
+              <div class="col-lg-6">
+                <div class="block">
+                  <div class="title"><strong class="d-block">Upload Plan</strong><span class="d-block"></span></div>
+                  <div class="block-body">
+                    <form action="/send_plan/" method="POST" enctype="multipart/form-data">{% csrf_token %}
+
+                           <div class="form-group">
+                        <input type="file" placeholder="Category" class="form-control" name="plan">
+                      </div>
+<br>
+                      <div class="form-group">
+                        <input type="submit" value="upload" class="btn btn-primary">
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+</body>
+</html>

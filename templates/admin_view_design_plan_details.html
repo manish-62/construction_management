@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include 'admin_sidebar.html' %}
+<div class="page-content">
+        <!-- Page Header-->
+        <div class="page-header no-margin-bottom">
+          <div class="container-fluid">
+
+          </div>
+        </div>
+        <!-- Breadcrumb-->
+        <div class="container-fluid">
+          <ul class="breadcrumb">
+            <li class="breadcrumb-item active">Tables            </li>
+          </ul>
+        </div>
+ {% for message in messages %}
+<div class="container-fluid p-0">
+  <div class="alert {{ message.tags }} alert-dismissible" role="alert" >
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="True">&times;</span>
+    </button>
+    {{ message }}
+  </div>
+</div>
+{% endfor %}
+        <section class="no-padding-top">
+          <div class="container-fluid">
+            <div class="row">
+              <div >
+                <div class="block" style="border:1px solid white;">
+                  <div class="title"><strong>Design for plan</strong></div>
+                  <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                      <thead>
+                        <tr>
+                          <th>Sl.No</th>
+                            <th>Customer Name</th>
+                            <th>Customer Email</th>
+                            <th>Customer Mobile</th>
+                          <th>Building Type</th>
+                          <th>Sq.ft</th>
+                            <th>Bays</th>
+                            <th>Beds</th>
+                            <th>Baths</th>
+                            <th>Width</th>
+                            <th>Depth</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      {% for i in data %}
+                        <tr>
+                          <th scope="row">{{forloop.counter}}</th>
+                                <td>{{i.user.name}}</td>
+                            <td>{{i.user.email}}</td>
+                            <td>{{i.user.mobile}}</td>
+                          <td>{{i.building_type}}</td>
+
+                          <td>{{i.sq_ft}}</td>
+                            <td>{{i.bays}}</td>
+                            <td>{{i.beds}}</td>
+                            <td>{{i.baths}}</td>
+                            <td>{{i.width}}</td>
+                            <td>{{i.depth}}</td>
+                            <td><a href="/admin_send_designed_plan/{{i.id}}">Send Plan</a></td>
+
+
+                          {% if i.status == "Approved" %}
+                          <td><a href="">Approved</a></td>
+{% elif i.status == "Rejected" %}
+                          <td><a href="/reject_uploaded_cost/{{i.id}}">Rejected</a></td>
+{% else %}
+                          <td><a href="/approve_designed_cost/{{i.id}}">Approve</a></td>
+                            <td><a href="/reject_designed_cost/{{i.id}}">Reject</a></td>
+{% endif %}
+                        </tr>
+                      {% endfor %}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+</div>
+
+</body>
+</html>

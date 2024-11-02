@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+       <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css'%}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/fontawesome-free/css/all.min.css'%}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css'%}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css'%}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css'%}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Roboto);
+
+body {
+  font-family: "Roboto";
+  text-align: center;
+  overflow: hidden;
+  margin: 15;
+  padding: 0;
+}
+#main {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+#hello {
+  float: left;
+  position: relative;
+  top: 10em;
+}
+h2 {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  left: 0;
+  right: 0;
+  top: 48%;
+  float: left;
+  letter-spacing: 0.3em;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+  float: left;
+  letter-spacing: 0.3em;
+  position: relative;
+}
+@-webkit-keyframes animate-con {
+  0% {
+    opacity: 0;
+  }
+  33.3% {
+    opacity: 0;
+  }
+  100% {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+#con {
+  -webkit-animation-name: animate-con;
+  -webkit-animation-duration: 5.5s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-out;
+}
+
+@-webkit-keyframes animate-one {
+  0% {
+    opacity: 0;
+    margin-right: 1500px;
+    margin-bottom: 1000px;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+#one {
+  -webkit-animation-name: animate-one;
+  -webkit-animation-duration: 1.5s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-out;
+}
+
+@-webkit-keyframes animate-two {
+  0% {
+    opacity: 0;
+    margin-top: 1050px;
+    margin-left: 100px;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+#two {
+  -webkit-animation-name: animate-two;
+  -webkit-animation-duration: 1.5s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-out;
+}
+
+@-webkit-keyframes animate-three {
+  0% {
+    opacity: 0;
+    margin-bottom: 1000px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+#three {
+  -webkit-animation-name: animate-three;
+  -webkit-animation-duration: 1.5s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-out;
+}
+
+@-webkit-keyframes animate-four {
+  0% {
+    opacity: 0;
+    margin-top: 1000px;
+    margin-left: 0;
+    margin-right: 1500px;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+#four {
+  -webkit-animation-name: animate-four;
+  -webkit-animation-duration: 1.5s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-out;
+}
+
+@-webkit-keyframes animate-five {
+  0% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+#five {
+  -webkit-animation-name: animate-five;
+  -webkit-animation-duration: 1.5s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-out;
+}
+
+    </style>
+</head>
+<body>
+
+</div>
+{% include 'user_navbar.html' %}
+
+ {% for message in messages %}
+<div class="container-fluid p-0">
+  <div class="alert {{ message.tags }} alert-dismissible" role="alert" >
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="True">&times</span>
+    </button>
+    {{ message }}
+  </div>
+</div>
+{% endfor %}
+    </div>
+
+
+<section id="hero" class="hero">
+<div class="info d-flex align-items-center">
+      <div class="container">
+        <div class="page-content">
+<div class="page-header">
+          <div class="container-fluid">
+          </div>
+        </div>
+        <!-- Breadcrumb-->
+
+        <section class="no-padding-top">
+          <div class="container-fluid">
+            <div class="row">
+              <!-- Basic Form-->
+              <div class="">
+                <div class="block">
+                  <div class="block-body">
+<div id="main">
+  <div id="hello">
+    <h1 id="one">H</h1>
+    <h1 id="two">E</h1>
+    <h1 id="three">L</h1>
+    <h1 id="four">L</h1>
+    <h1 id="five">O</h1>
+  </div>
+
+  <h2 id="con">WE ARE GCONSTRUCTION</h2>
+</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </section>
+        </div>
+        </div>
+ </div>
+
+    <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+
+      <div class="carousel-item active" style="background-image: url({% static 'assets/img/hero-carousel/hero-carousel-1.jpg' %})"></div>
+      <div class="carousel-item" style="background-image: url({% static 'assets/img/hero-carousel/hero-carousel-2.jpg' %})"></div>
+      <div class="carousel-item" style="background-image: url({% static 'assets/img/hero-carousel/hero-carousel-3.jpg' %})"></div>
+      <div class="carousel-item" style="background-image: url({% static 'assets/img/hero-carousel/hero-carousel-4.jpg' %})"></div>
+      <div class="carousel-item" style="background-image: url({% static 'assets/img/hero-carousel/hero-carousel-5.jpg' %})"></div>
+
+      <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+      </a>
+
+      <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+      </a>
+
+    </div>
+
+</section>
+</body>
+</html>

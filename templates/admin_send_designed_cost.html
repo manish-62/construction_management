@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include 'admin_sidebar.html' %}
+
+        <!-- Breadcrumb-->
+
+
+          <div class="container-fluid" style="padding-top:100px;">
+            <div class="row">
+              <!-- Basic Form-->
+              <div class="col-lg-6">
+                <div class="block">
+                  <div class="title"><strong class="d-block">Upload Plan Cost</strong><span class="d-block"></span></div>
+                  <div class="block-body">
+                    <form action="/save_design_cost_uploaded/{{data.id}}" method="POST" enctype="multipart/form-data">{% csrf_token %}
+
+                           <div class="form-group">
+                        <input type="text" placeholder="Enter cost" class="form-control" name="cost">
+                      </div>
+
+<br>
+                      <div class="form-group">
+                        <input type="submit" value="send" class="btn btn-primary">
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+</body>
+</html>

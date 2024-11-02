@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include 'admin_sidebar.html' %}
+<div class="page-content">
+        <!-- Page Header-->
+        <div class="page-header no-margin-bottom">
+          <div class="container-fluid">
+
+          </div>
+        </div>
+        <!-- Breadcrumb-->
+        <div class="container-fluid">
+          <ul class="breadcrumb">
+            <li class="breadcrumb-item active">Tables            </li>
+          </ul>
+        </div>
+ {% for message in messages %}
+<div class="container-fluid p-0">
+  <div class="alert {{ message.tags }} alert-dismissible" role="alert" >
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="True">&times;</span>
+    </button>
+    {{ message }}
+  </div>
+</div>
+{% endfor %}
+        <section class="no-padding-top">
+          <div class="container-fluid"
+            <div class="row">
+              <div >
+                <div class="block" style="border:1px solid white;">
+                  <div class="title"><strong>Request List</strong></div>
+                  <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                      <thead>
+                        <tr>
+                          <th>Sl.No</th>
+                          <th>Name</th>
+                          <th>Mobile</th>
+                          <th>Email</th>
+                            <th>address</th>
+                             <th>Licence Number</th>
+
+
+                          <th>Proof</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      {% for i in d %}
+                        <tr>
+                          <th scope="row">{{forloop.counter}}</th>
+                          <td>{{i.name}}</td>
+                          <td>{{i.mobile}}</td>
+                          <td>{{i.email}}</td>
+                            <td>{{i.address}}</td>
+                            <td>{{i.licence_number}}</td>
+                          <td>{{i.proof}}</td>
+                          {% if i.status == "True" %}
+                          <td><a href="#"  class="rounded bg-success text-white">approved</a></td>
+
+                          {% else %}
+                            <td><a href="/approve_request/{{i.id}}"  class="rounded bg-info text-white">approve</a></td>
+{% endif %}
+                                {% if i.status == "False" %}
+                            <td><a href="#" class="rounded bg-danger text-white">Rejected</a></td>
+
+                            {% else %}
+                            <td><a href="/reject_request/{{i.id}}" class="rounded bg-danger text-white">Reject</a></td>
+{% endif %}
+                            <td><a href="/delete_request/{{i.id}}" class="rounded bg-danger text-white">Delete</a></td>
+
+
+                        </tr>
+                      {% endfor %}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include 'user_navbar.html' %}
+<div class="container-fluid" style="padding-top:150px;">
+            <div class="row">
+              <!-- Basic Form-->
+              <div class="col-lg-6">
+                <div class="block">
+                  <div class="block-body">
+                    <form action="/save_design_plan/" method="POST" enctype="multipart/form-data">{% csrf_token %}
+              <label class="form-control-label">Building Type</label>
+<select class="form-control" name="building_type">
+    <option value="House">House</option>
+    <option value="Office">Office</option>
+</select>
+                      <div class="form-group">
+                        <label class="form-control-label">sq.ft</label>
+                        <input type="text"  class="form-control" name="sq_ft">
+                      </div>
+                        <div class="form-group">
+                        <label class="form-control-label">beds</label>
+                        <input type="text" class="form-control" name="beds">
+                      </div>
+
+                      <div class="form-group">
+                        <label class="form-control-label">Baths</label>
+                        <input type="text" placeholder="Baths" class="form-control" name="baths">
+                      </div><div class="form-group">
+                        <label class="form-control-label">Bays</label>
+                        <input type="text" class="form-control" name="bays">
+                      </div>
+                      <div class="form-group">
+                        <label class="form-control-label">Width</label>
+                        <input type="text" placeholder="width" class="form-control" name="width">
+                      </div>
+                        <div class="form-group">
+                        <label class="form-control-label">depth</label>
+                        <input type="text" placeholder="depth" class="form-control" name="depth">
+                      </div>
+                           <div class="form-group">
+                        <label class="form-control-label">Sample Image</label>
+                        <input type="file" placeholder="image" class="form-control" name="image">
+                      </div>
+                      <div class="form-group">
+                        <input type="submit" value="Submit" class="btn btn-primary">
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+</body>
+</html>

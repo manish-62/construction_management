@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Supplier Dashboard</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="{% static 'admin/vendor/bootstrap/css/bootstrap.min.css' %}">
+    <!-- Font Awesome CSS-->
+    <link rel="stylesheet" href="{% static 'admin/vendor/font-awesome/css/font-awesome.min.css' %}">
+    <!-- Custom Font Icons CSS-->
+    <link rel="stylesheet" href="{% static 'admin/css/font.css' %}">
+    <!-- Google fonts - Muli-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:300,400,700">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="{% static 'admin/css/style.default.css' %}" id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="{% static 'admin/css/custom.css' %}">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="{% static 'admin/img/favicon.ico">
+    <!-- Tweaks for older IEs--><!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+  </head>
+  <body>
+    <header class="header" style="width:1800px;">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid d-flex align-items-center justify-content-between">
+          <div class="navbar-header">
+            <!-- Navbar Header--><a href="index.html" class="navbar-brand">
+              <div class="brand-text brand-big visible text-uppercase"><strong class="text-primary">Dark</strong><strong>Admin</strong></div>
+              <div class="brand-text brand-sm"><strong class="text-primary">D</strong><strong>A</strong></div></a>
+            <!-- Sidebar Toggle Btn-->
+            <button class="sidebar-toggle"><i class="fa fa-long-arrow-left"></i></button>
+          </div>
+          <div class="right-menu list-inline no-margin-bottom">
+
+            <div class="list-inline-item logout">
+              <a id="logout" href="/" class="nav-link">Logout <i class="icon-logout"></i></a></div>
+          </div>
+        </div>
+      </nav>
+    </header>
+   <div class="d-flex align-items-stretch" style="width:1800px;">
+      <!-- Sidebar Navigation-->
+      <nav id="sidebar">
+        <!-- Sidebar Header-->
+        <div class="sidebar-header d-flex align-items-center">
+          <div class="avatar"><img src="{% static 'admin/img/avatar-6.jpg' %}" alt="..." class="img-fluid rounded-circle"></div>
+          <div class="title">
+            <h1 class="h5">Basil</h1>
+            <p>supplier</p>
+          </div>
+        </div>
+        <!-- Sidebar Navidation Menus--><span class="heading">Main</span>
+        <ul class="list-unstyled">
+
+
+                <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-windows"></i>Material Category</a>
+                  <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
+                    <li><a href="/add_material_category">Add</a></li>
+
+                    <li><a href="/view_material_category">VIEW</a></li>
+
+                  </ul>
+                </li>
+          <li><a href="#exampledropdownDropdown1" aria-expanded="false" data-toggle="collapse"> <i class="icon-windows"></i>Materials</a>
+                  <ul id="exampledropdownDropdown1" class="collapse list-unstyled ">
+                    <li><a href="/add_material">ADD</a></li>
+                    <li><a href="/view_material">VIEW</a></li>
+
+                  </ul>
+                </li>
+            <li><a href="#exampledropdownDropdown14" aria-expanded="false" data-toggle="collapse"> <i class="icon-windows"></i>Orders</a>
+                  <ul id="exampledropdownDropdown14" class="collapse list-unstyled ">
+                    <li><a href="/supplier_requested_order">Requested Orders</a></li>
+                    <li><a href="/supplier_view_rejected">Rejected orders</a></li>
+                      <li><a href="/supplier_view_approved">Approved</a></li>
+
+
+                  </ul>
+                </li>
+
+              <li><a href="#exampledropdownDropdown13" aria-expanded="false" data-toggle="collapse"> <i class="icon-windows"></i>Feedback</a>
+                  <ul id="exampledropdownDropdown13" class="collapse list-unstyled ">
+                    <li><a href="/supplier_view_feedback">View Feedback</a></li>
+
+
+
+                  </ul>
+                </li>
+                                <li><a href="/"> Logout</a></li>
+
+        </ul>
+
+
+      </nav>
+      <!-- Sidebar Navigation end-->
+      <div class="page-content">
+        <div class="page-header">
+          <div class="container-fluid">
+            <h2 class="h5 no-margin-bottom">Dashboard</h2>
+          </div>
+        </div>
+
+<footer class="footer">
+          <div class="footer__block block no-margin-bottom">
+            <div class="container-fluid text-center">
+              <!-- Please do not remove the backlink to us unless you support us at https://bootstrapious.com/donate. It is part of the license conditions. Thank you for understanding :)-->
+               <p class="no-margin-bottom"><a target="_blank" href="https://templateshub.net"></a>.</p>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <!-- JavaScript files-->
+    <script src="{% static 'admin/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'admin/vendor/popper.js/umd/popper.min.js' %}"> </script>
+    <script src="{% static 'admin/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'admin/vendor/jquery.cookie/jquery.cookie.js' %}"> </script>
+    <script src="{% static 'admin/vendor/chart.js/Chart.min.js' %}"></script>
+    <script src="{% static 'admin/vendor/jquery-validation/jquery.validate.min.js' %}"></script>
+    <script src="{% static 'admin/js/charts-home.js' %}"></script>
+    <script src="{% static 'admin/js/front.js' %}"></script>
+  </body>
+</html>
